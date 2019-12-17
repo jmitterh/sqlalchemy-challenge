@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Climate Analysis & Exploration API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Welcome to the Hawaii Climate Analysis and Exploration API!</h1>
+        <br>
+        <h3>Click on the links below to go to each JSON list. Copy and paste  the last links to the url with a given date</h3>
+        <p>*If not displaying properly, disable some of your add-ins like AdGuard AdBlocker*</p>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('welcome') }}"class="button">Home</a></li>
+            <br><br>
+            <li><a href="{{ url_for('precipitation') }}"class="button">Precipitation</a></li>
+            <br><br>
+            <li><a href="{{ url_for('stations') }}"class="button">Weather Stations</a></li>
+            <br><br>
+            <li><a href="{{ url_for('tobs') }}"class="button">Temperature Observation</a></li>
+            <br><br>
+            <li>Min, max & average temp. for a given date: </li>
+            <br>
+            <li>* /api/v1.0/START_DATE</li>
+            <br><br>
+            <li>Min, max & average temp. for a given range date: </li>
+            <br>
+            <li>* /api/v1.0/START_DATE/END_DATE</li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
